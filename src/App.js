@@ -1,6 +1,8 @@
 import React from 'react';
 import './scss/main.scss';
-import {clubs} from './components/clubs'
+import {clubs} from './components/clubs';
+import ClubList from './components/ClubList';
+import Club from './components/Club';
 
 
 class App extends React.Component {
@@ -12,27 +14,9 @@ class App extends React.Component {
   }
   render() {
     return (
-      <ul className = "item-list">
-      {this.state.clubs
-      .map(club => {
-        return (
-          <li key={clubs.indexOf(club)}>
-            <div className="clubSimbol">
-              <i className = {club.fa}></i>
-            </div>
-            <div className="clubName">
-              <p>{club.name}</p>
-            </div>
-            <ul className="memberList">
-              {club.members.map(member => 
-                <li key={club.members.indexOf(member)}> 
-                  {member}
-                </li>)}
-            </ul>
-          </li>
-        );
-      })}
-    </ul>
+      <div className="App">
+        <ClubList clubs = {this.state.clubs} />
+      </div>
     );
   }
 }
