@@ -1,9 +1,7 @@
 import React from 'react';
-import './scss/main.scss';
+import './scss/partials/App.scss';
 import {clubs} from './components/clubs';
 import ClubList from './components/ClubList';
-import Club from './components/Club';
-
 
 class App extends React.Component {
   constructor(props){
@@ -15,6 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <h1 className = "app-title">Lista de Clubes</h1>
         <ClubList clubs = {this.state.clubs} />
       </div>
     );

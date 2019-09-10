@@ -1,16 +1,16 @@
 import React from 'react';
 import Club from './Club';
+import '../scss/partials/ClubList.scss';
 import PropTypes from 'prop-types';
 
 class ClubList extends React.Component {
-
   render() {
     return(
-      <ul className = "item-list">
+      <ul className = "clubs">
       {this.props.clubs
       .map((club, index) => {
         return (
-          <li key={index}>
+          <li className = "club" key={index}>
             <Club 
             name ={club.name}
             fa = {club.fa}
@@ -20,11 +20,10 @@ class ClubList extends React.Component {
       })}
     </ul>
     )
-    
   }
 }
 
-ClubList.propTyles = {
-
+ClubList.propTypes = {
+  club: PropTypes.object
 }
 export default ClubList
